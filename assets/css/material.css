@@ -1,0 +1,208 @@
+
+  .icon-btn {
+    border: 3px solid #1c98ff;
+    border-radius: 10px;
+    background-color: #1c98ff;
+    color: white;
+    font-size: 20px;
+    transition: 0.2s;
+    font-family: 'Roboto', sans-serif;
+  }
+  .btn {
+    padding: 5px 25px;
+    border: 3px solid #1c98ff;
+    border-radius: 10px;
+    background-color: #1c98ff;
+    color: white;
+    font-size: 20px;
+    transition: 0.2s;
+    font-family: 'Roboto', sans-serif;
+  }
+  .icon-btn:hover {
+    transition: 0.2s;
+    border-color: #1c98ff;
+    color: #1c98ff;
+    background-color: white;
+  }
+  .btn:hover {
+    transition: 0.2s;
+    border-color: #1c98ff;
+    color: #1c98ff;
+    background-color: white;
+  }
+  .material-symbols-outlined {
+    padding: 0px;
+  }
+  body {
+    padding-top: 60px;
+    background-color: #ddd;
+  }
+  
+  .site-navbar {
+    min-height: 60px;
+    width: 100%;
+    position: fixed;
+    background-color: royalblue;
+    color: #333;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 2px 15px rgba(0,0,0,0.5);
+    z-index: 100;
+  }
+  
+  .toggle-menu {
+    height: 0;
+    width: 0;
+  }
+  .toggle-menu:checked + aside.sidebar {
+    left: 0;
+  }
+  
+  .background-fade {
+    position: fixed;
+    display: none;
+    background-color: rgba(0,0,0, 0.4);
+    height: 100vh;
+    top: 60px;
+    width: 100vw;
+    z-index: 1;
+    animation: reveal 0.4s;
+  }
+  .toggle-menu:checked ~ .background-fade {
+    display: block;
+  }
+  
+  .toggle-menu:after {
+    content: 'menu';
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Material Symbols Outlined';
+    font-feature-settings: 'liga' 1;
+    font-size: 1.7em;
+    display: inline-block;
+    color: white;
+    line-height: 60px;
+    padding: 0 1em;
+    transition: background-color 0.4s;
+    cursor: pointer;
+  }
+  .toggle-menu:active:before {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  .toggle-menu:before {
+    content: '';
+    transform: scale(0);
+    opacity: 0;
+    position: absolute;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    margin: -0.2em 1.5em 0 1.5em;
+    transition: transform 0.15s, opacity 0.15s;
+  }
+  
+  .sidebar {
+    width: 240px;
+    position: fixed;
+    height: 100vh;
+    background-color: white;
+    top: 60px;
+    left: -110%;
+    box-shadow: 10px 8px 40px rgba(0,0,0,0.5);
+    transition: left 0.3s;
+    z-index: 2;
+  }
+  .sidebar-links {
+    padding: 0;
+  }
+  
+  a.sidebar-link {
+    color: #333;
+    display: flex;
+    align-items: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 0.7em;
+    text-decoration: none;
+    transition: background-color 0.4s;
+  }
+  
+  .sidebar-link:hover {
+    background-color: rgba(0,0,0,0.1);
+  }
+  
+  .sidebar-link > i {
+    margin-right: 1em;
+  }
+  
+  @media screen and (max-width: 320px) {
+    .sidebar {
+      width: 100%;
+    }
+  }
+  
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  /* Material style */
+  button {
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 2px;
+    font-size: 22px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);
+    background: royalblue;
+  }
+  
+  /* Ripple magic */
+  button{
+    position: relative;
+    overflow: hidden;
+  }
+  
+  button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, .5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(0, 0);
+      opacity: 1;
+    }
+    20% {
+      transform: scale(25, 25);
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(40, 40);
+    }
+  }
+  
+  button:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+  }
+  
+  
+  
